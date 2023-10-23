@@ -1,0 +1,9 @@
+.contenido {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #E2D8F8;
+    color: black;
+    text-align: center;
+}

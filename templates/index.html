@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+  {% block content %}
+    
+      <h3><span class="badge bg-secondary">Temperatura</span></h3>
+      <div id='temperature' class='temperature'”></div>
+
+      <h3><span class="badge bg-warning">Presión Admosferica</span></h3>
+      <div id='presion' class='presion'”></div>
+
+      <h3><span class="badge bg-success">Altitud</span></h3>
+      <div id='altitud' class='altitud'”></div>
+
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    
+    <script type='text/javascript'>
+        let temperature = {{ graphJSONT | safe }};
+        Plotly.plot('temperature',temperature,{});
+
+        let presion = {{ graphJSONP | safe }};
+        Plotly.plot('presion',presion,{});
+
+        let altitud = {{ graphJSONA | safe }};
+        Plotly.plot('altitud',altitud,{});
+
+    </script>
+
+  {% endblock %}
+
+
